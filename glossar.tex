@@ -1,0 +1,81 @@
+%% LyX 1.6.5 created this file.  For more info, see http://www.lyx.org/.
+\documentclass[english]{scrreprt}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage{amsmath}
+\usepackage{babel}
+
+\begin{document}
+
+\section*{Begriffe}
+
+
+\subsection*{Funktionen}
+\begin{description}
+\item [{monoton~steigend~(fallend)}] Die Werte, die eine Funktion annimmt,
+werden größer (kleiner) bzw bleiben konstant.
+\item [{streng~monoton~steigend~(fallend)}] Die Werte, die eine Funktion
+annimmt, werden größer (kleiner).
+\end{description}
+
+\section*{Rechenregeln}
+
+
+\subsection*{Logarithmus}
+\begin{description}
+\item [{Logarithmus}] ist die Umkehrfunktion der Exponentialfunktion: 
+\item [{$b^{\log_{b}(x)}=x$}] und $\log_{b}(b^{x})=x$
+\item [{Produkte}] $\log_{a}(x\times y)=\log_{a}(x)+\log_{a}(y)$
+\item [{Quotienten}] $\log_{a}(\frac{x}{y})=\log_{a}(x)-\log_{a}(y)$
+\item [{Summen~und~Differenzen}] $\log_{a}(x+y)=\log_{a}(x)+\log_{a}(1+\frac{y}{x})$
+\item [{Potenzen}] $log_{a}(x^{r})=r\times log_{a}(x)$
+\item [{Basisumrechnung}] von Basis a zu Basis b: $\log_{b}(r)=\frac{\log_{a}(r)}{\log_{a}(b)}$
+\end{description}
+
+\section*{Formeln}
+
+
+\subsection*{Landau-Symbole}
+
+Landau-Symbole verwenden wir, um das asymptotische Verhalten einer
+Laufzeitfunktion $f$ zu beschreiben.
+
+Für $x\rightarrow\infty$
+\begin{description}
+\item [{$f\in O(g)$}] $\exists c>0\exists x_{0}\forall x>x_{0}:|f(x)|\leq c\times|g(x)|$
+f wächst höchstens so schnell wie g
+\item [{$f\in\Omega(g)$}] $\exists c>0\exists x_{0}\forall x>x_{0}:|f(x)|\ge c\times|g(x)|$
+f wächst mindestens so schnell wie g
+\item [{$f\in\Theta(g)$}] $\exists c_{0}>0\exists c_{1}>0\exists x_{0}\forall x>x_{0}:|c\times|g(x)|\leq|f(x)|\leq c_{1}\times|g(x)|$
+f wächst genauso schnell wie g
+\end{description}
+
+\subsubsection*{Achtung: das Gleichheitszeichen}
+
+Oft wird das Gleichheitszeichen verwendet, um auszudrücken, dass eine
+Funktion einer Klasse angehört. So wird auch in der Vorlesung beispielsweise$f(x)=O(x^{2})$
+geschrieben, wenn es um eine Funktion quadratischer Laufzeit geht.
+Tatsächlich ist das Gleichheitszeichen ein überladener Operator und
+bezeichnet hier nicht die Gleichheit der beiden Ausdrücke, sondern
+wird anstelle des $\in$-Symbols verwendet. $f(x)=O(x^{2})$ heißt
+also nur, dass $f(x)$ in der Menge der Funktionen enthalten ist,
+die durch $O(x^{2})$ beschrieben werden.
+
+
+\subsection*{Master-Theorem}
+
+Wenn eine rekursive Gleichung der Laufzeitfunktion in Form $T(n)=\begin{cases}
+a & \mbox{für n=1}\\
+c\times n+d\times T(\frac{n}{b}) & \mbox{für n>1}\end{cases}$vorliegt, kann man mit Hilfe des Master-Theorems die Laufzeit bestimmen.
+
+$T(n)=\begin{cases}
+\Theta(n) & \mbox{wenn d<b}\\
+\Theta(n\times\log(n)) & \mbox{wenn d=b}\\
+O(n^{\log_{b}(d)}) & \mbox{wenn d>b}\end{cases}$
+
+Die hier gezeigte Version des Master-Theorems ist beschränkt auf Algorithmen
+mit linearen Nebenkosten (der Teil mit $c\times n$). In der Literatur
+finden sich mächtigere Varianten.
+\end{document}
