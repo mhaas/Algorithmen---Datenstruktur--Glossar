@@ -78,4 +78,38 @@ O(n^{\log_{b}(d)}) & \mbox{wenn d>b}\end{cases}$
 Die hier gezeigte Version des Master-Theorems ist beschränkt auf Algorithmen
 mit linearen Nebenkosten (der Teil mit $c\times n$). In der Literatur
 finden sich mächtigere Varianten.
+
+\subsection*{Beweis durch Induktion}
+
+Mit einem Beweis durch Induktion kann eine Aussage für alle
+natürlichen Zahlen bewiesen werden.
+
+In einem ersten Schritt wird der triviale Fall $n=1$
+(oder auch $n=0$) bewiesen: dies ist unser Induktionsanfang.
+Wir nehmen an, dass die zu beweisende Aussage für beliebige 
+Zahlen $n$ gilt (Induktionsannahme).
+Für den Beweis benötigen wir den Induktionsschritt: 
+wir zeigen (durch Umformung),
+dass die Aussage auch für $n+1$ gilt.
+Ausgehend von unserem Basisfall $n=1$ wissen wir nun,
+dass für alle folgenden Schritte die Aussage gültig ist.
+Von $n=1$ kommen wir auf $n=2$ und wissen, dass die Aussage immer
+noch gültig ist. Von $n=2$ auf $n=3$ etc.\\
+\\
+Ein einfaches Beispiel:\\
+\\
+Die zu beweisende Aussage (Multiplikation von n mit 3):\\
+$\sum\limits_{1}^n{3}=3\times n$ \\ 
+Induktionsanfang: $n=1$:\\
+$\sum\limits_{1}^1{3}=3\times 1$ \\
+Induktionsschritt mit $n+1$: \\
+$\sum\limits_{1}^{n+1}{3}=(\sum\limits_{1}^n{3})+3=(3\times n) + 3 = 3\times (n+1)$\\
+Der Trick in der Umformung ist, $\sum\limits_{1}^n{3}$ im zweiten Schritt
+durch $3 \times n$ zu ersetzen. Das dürfen wir, da unsere Induktionsannahme
+eben $\sum\limits_{1}^n{3}=3\times n$ lautet und wir annehmen, dass
+diese Aussage bereits bewiesen ist.
+
+
+
+
 \end{document}
