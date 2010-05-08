@@ -1,5 +1,6 @@
 %% LyX 1.6.5 created this file.  For more info, see http://www.lyx.org/.
 \documentclass[english]{scrreprt}
+%\documentclass[english]{article}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \setcounter{secnumdepth}{3}
@@ -14,10 +15,8 @@
 
 \subsection*{Funktionen}
 \begin{description}
-\item [{monoton~steigend~(fallend)}] Die Werte, die eine Funktion annimmt,
-werden größer (kleiner) bzw bleiben konstant.
-\item [{streng~monoton~steigend~(fallend)}] Die Werte, die eine Funktion
-annimmt, werden größer (kleiner).
+\item [{monoton~steigend~(fallend)}] Sei f(x) eine Funktion in Abhängigkeit von $x$, dann ist die Funktion monoton steigen (fallend), wenn für steigendes $x$ die Werte nie echt kleiner (größer) werden.
+\item [{streng~monoton~steigend~(fallend)}] Sei f(x) eine Funktion in Abhängigkeit von $x$, dann ist die Funktion monoton steigen (fallend), wenn für steigendes $x$ die Werte immer echt größer (kleiner) werden.
 \end{description}
 
 \section*{Rechenregeln}
@@ -27,6 +26,8 @@ annimmt, werden größer (kleiner).
 \begin{description}
 \item [{Logarithmus}] ist die Umkehrfunktion der Exponentialfunktion: 
 \item [{$b^{\log_{b}(x)}=x$}] und $\log_{b}(b^{x})=x$
+
+Der Logarithmus beantwortet Fragen wie: wenn ich mit einer Zahl $x$ starte, und dann in jedem Schritt $x=x/y$ setze, wie oft kann das gemacht werden, bis die resultierende Zahl $\leq z$ wird? Das kann so dargestellt werden: $x/(y^i) = z$. Dies ist natürlich gleich $z * y^i = x \leftrightarrow y^i = x/z$. Wir fragen nach der Zahl $i$, also müssen wir auf beiden Seiten logarithmieren (zum Beispiel zur Basis $2$, dargestellt durch $\log$): $i \log y = \log(x/z) \leftrightarrow i = \frac{\log x - \log z}{\log y}$. In Algorithmen und Datenstrukturen fragen wir besonders häufig danach, wie oft man eine Zahl $n$ durch $2$ teilen kann, bis sie $1$ wird. Also: $n/2^i = 1? \leftrightarrow \log n = i$. 
 \item [{Produkte}] $\log_{a}(x\times y)=\log_{a}(x)+\log_{a}(y)$
 \item [{Quotienten}] $\log_{a}(\frac{x}{y})=\log_{a}(x)-\log_{a}(y)$
 \item [{Summen~und~Differenzen}] $\log_{a}(x+y)=\log_{a}(x)+\log_{a}(1+\frac{y}{x})$
@@ -61,7 +62,8 @@ Tatsächlich ist das Gleichheitszeichen ein überladener Operator und
 bezeichnet hier nicht die Gleichheit der beiden Ausdrücke, sondern
 wird anstelle des $\in$-Symbols verwendet. $f(x)=O(x^{2})$ heißt
 also nur, dass $f(x)$ in der Menge der Funktionen enthalten ist,
-die durch $O(x^{2})$ beschrieben werden.
+die durch $O(x^{2})$ beschrieben werden. Daher dürfen diese Gleichheitszeichen auch nur von links nach rechts gelesen werden.
+$O(f(n)) = g(n)$ macht im Allgemeinen keinen Sinn! Außerdem sollten Sie sich diese Schreibweise wenn möglich nicht angewöhnen, sie wird nur leider in den gängigen Artikel und Textbüchern verwendet, so dass Sie sie kennen sollten.
 
 
 \subsection*{Master-Theorem}
