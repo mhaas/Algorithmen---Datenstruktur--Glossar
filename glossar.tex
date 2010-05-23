@@ -65,6 +65,32 @@ also nur, dass $f(x)$ in der Menge der Funktionen enthalten ist,
 die durch $O(x^{2})$ beschrieben werden. Daher dürfen diese Gleichheitszeichen auch nur von links nach rechts gelesen werden.
 $O(f(n)) = g(n)$ macht im Allgemeinen keinen Sinn! Außerdem sollten Sie sich diese Schreibweise wenn möglich nicht angewöhnen, sie wird nur leider in den gängigen Artikel und Textbüchern verwendet, so dass Sie sie kennen sollten.
 
+\subsubsection*{Rechenregeln}
+
+\begin{itemize}
+\item $c*f(n) \in \Theta(f(n))$
+\item $f(n) + g(n) \in \Omega(f(n))$
+\item $f(n) + g(n) \in O(f(n))$ falls g(n) in $O(f(n))$
+\item $O(f(n) * O(g(n)) \in O(f(n)) * g(n))$
+\end{itemize}
+Quelle: Lemma 2.2 aus "Algorithms and Data Structures: The Basic Toolbox" von Kurt Mehlhorn und Peter Sanders.
+
+
+\subsubsection*{Regel von L'Hospital}
+Beim Vergleich zweier Funktion f(x) und g(x) möchte man oft wissen, welche davon 
+schneller wächst. Dann kann man beispielsweise Aussagen der Form $f(x) \in O(g(x))$ tätigen.
+Das Problem lässt sich Frage nach dem Grenzwert des Quotienten beider Funktionen betrachten:
+$\lim\limits_{x \rightarrow \infty}{\frac{f(x)}{g(x)}}$. Der Grenzwert wird gegen $0$, $1$ oder
+$\infty$ streben, da wir für die Laufzeit-Analyse nur monoton steigende Funktionen
+betrachten.\\
+Da es oftmals schwierig ist, einen Grenzwert für einen solchen Quotienten zu betrachten,
+kann man die Regel von L'Hospital benutzen. Diese besagt, dass sich der gesuchte Grenzwert
+mittels der Ableitungen der Funktionen finden lässt:
+$\lim\limits_{x \rightarrow \infty}{\frac{f(x)}{g(x)}} = \lim\limits_{x \rightarrow \infty}{\frac{f'(x)}{g'(x)}}$
+Die Regel von L'Hospital muss unter Umständen mehrfach angewendet werden, bis das gewünschte
+Ergebnis sichtbar ist.
+Quelle: http://de.wikipedia.org/wiki/Regel_von_L%E2%80%99Hospital
+
 
 \subsection*{Master-Theorem}
 
